@@ -1,0 +1,41 @@
+# GameMaker Studio 2 gitignore
+
+# Compiled output
+*.yyc
+*.yyz
+*.zip
+
+# Cache and temporary files
+.cache/
+.temp/
+
+# User-specific files
+*.yyp.yy
+options/windows/options_windows.yy
+options/mac/options_mac.yy
+options/linux/options_linux.yy
+
+# Build output directories
+build/
+datafiles_yy/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+output.txt
+
+# Node modules (if using any extensions)
+node_modules/
+
+# Backup files
+*.bak
+*.backup
+*~

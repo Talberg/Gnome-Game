@@ -1,0 +1,40 @@
+{
+  "$GMProject":"v1",
+  "%Name":"Gmome Attack",
+  "AudioGroups":[
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+  ],
+  "configs":{
+    "children":[],
+    "name":"Default",
+  },
+  "defaultScriptType":0,
+  "Folders":[],
+  "ForcedPrefabProjectReferences":[],
+  "IncludedFiles":[],
+  "isEcma":false,
+  "LibraryEmitters":[],
+  "MetaData":{
+    "IDEVersion":"2024.14.0.207",
+  },
+  "name":"Gmome Attack",
+  "resources":[
+    {"id":{"name":"obj_gnome_defender","path":"objects/obj_gnome_defender/obj_gnome_defender.yy",},},
+    {"id":{"name":"obj_grid_manager","path":"objects/obj_grid_manager/obj_grid_manager.yy",},},
+    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"scr_draw_gnome_placeholders","path":"scripts/scr_draw_gnome_placeholders/scr_draw_gnome_placeholders.yy",},},
+    {"id":{"name":"spr_evil_gnome","path":"sprites/spr_evil_gnome/spr_evil_gnome.yy",},},
+    {"id":{"name":"spr_gnome_defender","path":"sprites/spr_gnome_defender/spr_gnome_defender.yy",},},
+    {"id":{"name":"spr_gnome_projectile","path":"sprites/spr_gnome_projectile/spr_gnome_projectile.yy",},},
+    {"id":{"name":"spr_grid_cell","path":"sprites/spr_grid_cell/spr_grid_cell.yy",},},
+  ],
+  "resourceType":"GMProject",
+  "resourceVersion":"2.0",
+  "RoomOrderNodes":[
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+  ],
+  "templateType":"game",
+  "TextureGroups":[
+    {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+  ],
+}

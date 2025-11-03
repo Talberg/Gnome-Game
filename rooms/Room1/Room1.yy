@@ -8,7 +8,8 @@
   "instanceCreationOrder": [
     { "name": "inst_game_manager", "path": "rooms/Room1/Room1.yy" },
     { "name": "inst_grid_manager", "path": "rooms/Room1/Room1.yy" },
-    { "name": "inst_wave_manager", "path": "rooms/Room1/Room1.yy" }
+    { "name": "inst_wave_manager", "path": "rooms/Room1/Room1.yy" },
+    { "name": "inst_tower_pool", "path": "rooms/Room1/Room1.yy" }
   ],
   "isDnd": false,
   "layers": [
@@ -105,6 +106,33 @@
           "scaleX": 1.0,
           "scaleY": 1.0,
           "x": 64.0,
+          "y": 0.0
+        },
+        {
+          "$GMRInstance": "v4",
+          "%Name": "inst_tower_pool",
+          "colour": 4294967295,
+          "frozen": false,
+          "hasCreationCode": false,
+          "ignore": false,
+          "imageIndex": 0,
+          "imageSpeed": 1.0,
+          "inheritCode": false,
+          "inheritedItemId": null,
+          "inheritItemSettings": false,
+          "isDnd": false,
+          "name": "inst_tower_pool",
+          "objectId": {
+            "name": "obj_tower_pool",
+            "path": "objects/obj_tower_pool/obj_tower_pool.yy"
+          },
+          "properties": [],
+          "resourceType": "GMRInstance",
+          "resourceVersion": "2.0",
+          "rotation": 0.0,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "x": 96.0,
           "y": 0.0
         }
       ],

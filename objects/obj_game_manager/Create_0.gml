@@ -1,7 +1,7 @@
 /// @description Game Manager Initialization
 
 // Player resources
-gold = 100;
+gold = 300; // Increased starting gold for tower purchases
 lives = 20;
 
 // Wave system

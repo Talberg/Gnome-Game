@@ -3,10 +3,11 @@
 /// @param x X position
 /// @param y Y position
 /// @param is_evil Whether this is an evil gnome (red) or defender (blue)
+/// @param tower_color Optional color for tower types (default is blue)
 
-function draw_gnome_placeholder(_sprite, _x, _y, _is_evil) {
+function draw_gnome_placeholder(_sprite, _x, _y, _is_evil, _tower_color = c_blue) {
     // Draw body (circle)
-    var body_color = _is_evil ? c_red : c_blue;
+    var body_color = _is_evil ? c_red : _tower_color;
     draw_set_color(body_color);
     draw_circle(_x, _y, 16, false);
     

@@ -18,6 +18,10 @@ draw_text(200, 10, "Lives: " + string(lives));
 draw_set_color(c_white);
 draw_text(380, 10, "Wave: " + string(current_wave));
 
+// Draw hint
+draw_set_color(c_ltgray);
+draw_text(560, 10, "[R] Toggle Ranges");
+
 // Game over message
 if (game_over) {
     draw_set_halign(fa_center);

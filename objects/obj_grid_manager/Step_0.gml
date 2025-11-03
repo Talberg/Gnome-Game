@@ -60,3 +60,12 @@ if (mouse_check_button_pressed(mb_right)) {
         }
     }
 }
+
+// TEST: Press SPACE to spawn a test enemy in a random lane
+if (keyboard_check_pressed(vk_space)) {
+    var lane_num = irandom(grid_rows - 1);
+    var enemy_y = grid_start_y + (lane_num * cell_size) + (cell_size / 2);
+    var enemy = instance_create_depth(room_width - 50, enemy_y, -50, obj_evil_gnome);
+    enemy.lane = lane_num;
+    show_debug_message("Test enemy spawned in lane " + string(lane_num));
+}

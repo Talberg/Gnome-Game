@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_gnome_defender",
+  "%Name":"obj_projectile",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_gnome_defender",
+  "name":"obj_projectile",
   "overriddenProperties":[],
   "parent":{
     "name":"Gmome Attack",
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gnome_defender",
-    "path":"sprites/spr_gnome_defender/spr_gnome_defender.yy",
+    "name":"spr_gnome_projectile",
+    "path":"sprites/spr_gnome_projectile/spr_gnome_projectile.yy",
   },
   "spriteMaskId":null,
   "visible":true,

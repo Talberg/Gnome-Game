@@ -9,7 +9,8 @@
     { "name": "inst_game_manager", "path": "rooms/Room1/Room1.yy" },
     { "name": "inst_grid_manager", "path": "rooms/Room1/Room1.yy" },
     { "name": "inst_wave_manager", "path": "rooms/Room1/Room1.yy" },
-    { "name": "inst_tower_pool", "path": "rooms/Room1/Room1.yy" }
+    { "name": "inst_tower_pool", "path": "rooms/Room1/Room1.yy" },
+    { "name": "inst_main_menu", "path": "rooms/Room1/Room1.yy" }
   ],
   "isDnd": false,
   "layers": [
@@ -134,6 +135,33 @@
           "scaleY": 1.0,
           "x": 96.0,
           "y": 0.0
+        }
+        {
+          "$GMRInstance": "v4",
+          "%Name": "inst_main_menu",
+          "colour": 4294967295,
+          "frozen": false,
+          "hasCreationCode": false,
+          "ignore": false,
+          "imageIndex": 0,
+          "imageSpeed": 1.0,
+          "inheritCode": false,
+          "inheritedItemId": null,
+          "inheritItemSettings": false,
+          "isDnd": false,
+          "name": "inst_main_menu",
+          "objectId": {
+            "name": "obj_main_menu",
+            "path": "objects/obj_main_menu/obj_main_menu.yy"
+          },
+          "properties": [],
+          "resourceType": "GMRInstance",
+          "resourceVersion": "2.0",
+          "rotation": 0.0,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "x": 200.0,
+          "y": 150.0
         }
       ],
       "layers": [],

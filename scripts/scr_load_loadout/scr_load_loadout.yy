@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_tower_pool_helpers",
+  "%Name":"scr_load_loadout",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_tower_pool_helpers",
+  "name":"scr_load_loadout",
   "parent":{
     "name":"Gmome Attack",
     "path":"Gmome Attack.yyp",

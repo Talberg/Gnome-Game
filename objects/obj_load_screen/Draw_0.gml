@@ -1,4 +1,4 @@
-/// @description Draw the main menu UI
+/// @description Draw the load/save UI panel
 
 // Dim background
 draw_set_color(c_black);
@@ -18,12 +18,7 @@ draw_rectangle(menu_x, menu_y, menu_x+menu_width, menu_y+menu_height, true);
 draw_set_color(c_lime);
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
-// Use `font_default` only if a global variable by that name exists to avoid reading an undefined variable
-// variable_global_exists returns false if the global variable doesn't exist, so we won't evaluate
-// `font_default` unless it actually exists.
-if (variable_global_exists("font_default")) {
-    draw_set_font(font_default);
-}
+if (variable_global_exists("font_default")) draw_set_font(font_default);
 draw_text(menu_x + menu_width/2, menu_y + 12, title);
 
 // Subtitle

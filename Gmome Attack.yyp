@@ -1,159 +1,61 @@
 {
-  "$GMProject": "v1",
-  "%Name": "Gmome Attack",
-  "AudioGroups": [
-    {
-      "$GMAudioGroup": "v1",
-      "%Name": "audiogroup_default",
-      "exportDir": "",
-      "name": "audiogroup_default",
-      "resourceType": "GMAudioGroup",
-      "resourceVersion": "2.0",
-      "targets": -1
-    }
+  "$GMProject":"v1",
+  "%Name":"Gmome Attack",
+  "AudioGroups":[
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
-  "configs": {
-    "children": [],
-    "name": "Default"
+  "configs":{
+    "children":[],
+    "name":"Default",
   },
-  "defaultScriptType": 0,
-  "Folders": [],
-  "ForcedPrefabProjectReferences": [],
-  "IncludedFiles": [],
-  "isEcma": false,
-  "LibraryEmitters": [],
-  "MetaData": {
-    "IDEVersion": "2024.14.0.207"
+  "defaultScriptType":0,
+  "Folders":[],
+  "ForcedPrefabProjectReferences":[],
+  "IncludedFiles":[],
+  "isEcma":false,
+  "LibraryEmitters":[],
+  "MetaData":{
+    "IDEVersion":"2024.14.0.207",
   },
-  "name": "Gmome Attack",
-  "resources": [
-    {
-      "id": {
-        "name": "obj_evil_gnome",
-        "path": "objects/obj_evil_gnome/obj_evil_gnome.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "obj_game_manager",
-        "path": "objects/obj_game_manager/obj_game_manager.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "obj_gnome_defender",
-        "path": "objects/obj_gnome_defender/obj_gnome_defender.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "obj_grid_manager",
-        "path": "objects/obj_grid_manager/obj_grid_manager.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "obj_projectile",
-        "path": "objects/obj_projectile/obj_projectile.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "obj_tower_basic",
-        "path": "objects/obj_tower_basic/obj_tower_basic.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "obj_tower_bomb",
-        "path": "objects/obj_tower_bomb/obj_tower_bomb.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "obj_tower_pool",
-        "path": "objects/obj_tower_pool/obj_tower_pool.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "obj_tower_rapid",
-        "path": "objects/obj_tower_rapid/obj_tower_rapid.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "obj_tower_sniper",
-        "path": "objects/obj_tower_sniper/obj_tower_sniper.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "obj_wave_manager",
-        "path": "objects/obj_wave_manager/obj_wave_manager.yy"
-      }
-    },
-    { "id": { "name": "Room1", "path": "rooms/Room1/Room1.yy" } },
-    {
-      "id": {
-        "name": "scr_draw_gnome_placeholders",
-        "path": "scripts/scr_draw_gnome_placeholders/scr_draw_gnome_placeholders.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "scr_tower_pool_helpers",
-        "path": "scripts/scr_tower_pool_helpers/scr_tower_pool_helpers.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "spr_evil_gnome",
-        "path": "sprites/spr_evil_gnome/spr_evil_gnome.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "spr_gnome_defender",
-        "path": "sprites/spr_gnome_defender/spr_gnome_defender.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "spr_gnome_projectile",
-        "path": "sprites/spr_gnome_projectile/spr_gnome_projectile.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "spr_grid_cell",
-        "path": "sprites/spr_grid_cell/spr_grid_cell.yy"
-      }
-    }
+  "name":"Gmome Attack",
+  "resources":[
+    {"id":{"name":"obj_evil_gnome","path":"objects/obj_evil_gnome/obj_evil_gnome.yy",},},
+    {"id":{"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy",},},
+    {"id":{"name":"obj_gnome_defender","path":"objects/obj_gnome_defender/obj_gnome_defender.yy",},},
+    {"id":{"name":"obj_grid_manager","path":"objects/obj_grid_manager/obj_grid_manager.yy",},},
+    {"id":{"name":"obj_main_menu","path":"objects/obj_main_menu/obj_main_menu.yy",},},
+    {"id":{"name":"obj_projectile","path":"objects/obj_projectile/obj_projectile.yy",},},
+    {"id":{"name":"obj_tower_basic","path":"objects/obj_tower_basic/obj_tower_basic.yy",},},
+    {"id":{"name":"obj_tower_bomb","path":"objects/obj_tower_bomb/obj_tower_bomb.yy",},},
+    {"id":{"name":"obj_tower_pool","path":"objects/obj_tower_pool/obj_tower_pool.yy",},},
+    {"id":{"name":"obj_tower_rapid","path":"objects/obj_tower_rapid/obj_tower_rapid.yy",},},
+    {"id":{"name":"obj_tower_sniper","path":"objects/obj_tower_sniper/obj_tower_sniper.yy",},},
+    {"id":{"name":"obj_wave_manager","path":"objects/obj_wave_manager/obj_wave_manager.yy",},},
+    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"scr_draw_gnome_placeholders","path":"scripts/scr_draw_gnome_placeholders/scr_draw_gnome_placeholders.yy",},},
+    {"id":{"name":"scr_tower_pool_helpers","path":"scripts/scr_tower_pool_helpers/scr_tower_pool_helpers.yy",},},
+  {"id":{"name":"scr_new_game","path":"scripts/scr_new_game/scr_new_game.yy",},},
+    {"id":{"name":"spr_evil_gnome","path":"sprites/spr_evil_gnome/spr_evil_gnome.yy",},},
+    {"id":{"name":"spr_gnome_defender","path":"sprites/spr_gnome_defender/spr_gnome_defender.yy",},},
+    {"id":{"name":"spr_gnome_projectile","path":"sprites/spr_gnome_projectile/spr_gnome_projectile.yy",},},
+    {"id":{"name":"spr_grid_cell","path":"sprites/spr_grid_cell/spr_grid_cell.yy",},},
+    {"id":{"name":"obj_load_screen","path":"objects/obj_load_screen/obj_load_screen.yy",},},
+    {"id":{"name":"Room_Load","path":"rooms/Room_Load/Room_Load.yy",},},
+    {"id":{"name":"Start","path":"rooms/Start/Start.yy",},},
+  {"id":{"name":"scr_save_loadout","path":"scripts/scr_save_loadout/scr_save_loadout.yy",},},
+  {"id":{"name":"scr_load_loadout","path":"scripts/scr_load_loadout/scr_load_loadout.yy",},},
+    {"id":{"name":"obj_turret_select","path":"objects/obj_turret_select/obj_turret_select.yy",},},
+    {"id":{"name":"Room_TurretSelect","path":"rooms/Room_TurretSelect/Room_TurretSelect.yy",},},
   ],
-  "resourceType": "GMProject",
-  "resourceVersion": "2.0",
-  "RoomOrderNodes": [
-    { "roomId": { "name": "Room1", "path": "rooms/Room1/Room1.yy" } }
+  "resourceType":"GMProject",
+  "resourceVersion":"2.0",
+  "RoomOrderNodes":[
+    {"roomId":{"name":"Start","path":"rooms/Start/Start.yy",},},
+    {"roomId":{"name":"Room_Load","path":"rooms/Room_Load/Room_Load.yy",},},
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
-  "templateType": "game",
-  "TextureGroups": [
-    {
-      "$GMTextureGroup": "",
-      "%Name": "Default",
-      "autocrop": true,
-      "border": 2,
-      "compressFormat": "bz2",
-      "customOptions": "",
-      "directory": "",
-      "groupParent": null,
-      "isScaled": true,
-      "loadType": "default",
-      "mipsToGenerate": 0,
-      "name": "Default",
-      "resourceType": "GMTextureGroup",
-      "resourceVersion": "2.0",
-      "targets": -1
-    }
-  ]
+  "templateType":"game",
+  "TextureGroups":[
+    {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+  ],
 }

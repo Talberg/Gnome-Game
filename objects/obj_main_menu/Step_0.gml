@@ -17,12 +17,16 @@ if (mouse_check_button_pressed(mb_left)) {
             case "start":
                 // Go to main room (Room1) if available
                 var r = asset_get_index("Room1");
-                if (r != -1) room_goto(r); else room_goto(room_first());
+                if (r != -1) room_goto(r); else room_goto(room_first);
                 break;
             case "loadout":
-                // Go to Room1 and show loadout UI (we just go to Room1 for now)
-                var r2 = asset_get_index("Room1");
-                if (r2 != -1) room_goto(r2); else room_goto(room_first());
+                // Open the dedicated Loadout room if available
+                var r2 = asset_get_index("Room_Load");
+                if (r2 != -1) room_goto(r2); else {
+                    // Fallback to Room1
+                    var rfb = asset_get_index("Room1");
+                    if (rfb != -1) room_goto(rfb); else room_goto(room_first);
+                }
                 break;
             case "options":
                 global.show_ranges = !global.show_ranges;

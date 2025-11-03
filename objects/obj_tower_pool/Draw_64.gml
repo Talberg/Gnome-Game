@@ -144,25 +144,3 @@ draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_alpha(1.0);
-
-// Draw Save/Load buttons on the right side of the panel
-var btn_w = 80; var btn_h = 28; var btn_gap = 8;
-var btn_x = room_width - 10 - btn_w;
-var btn_y = panel_y + 12;
-
-// Save button
-draw_set_color(c_black);
-draw_rectangle(btn_x, btn_y, btn_x + btn_w, btn_y + btn_h, false);
-draw_set_color(c_white);
-draw_set_halign(fa_center); draw_set_valign(fa_middle);
-draw_text(btn_x + btn_w/2, btn_y + btn_h/2, "Save");
-
-// Load button (below save)
-var load_y = btn_y + btn_h + btn_gap;
-draw_set_color(c_black);
-draw_rectangle(btn_x, load_y, btn_x + btn_w, load_y + btn_h, false);
-draw_set_color(c_white);
-draw_text(btn_x + btn_w/2, load_y + btn_h/2, "Load");
-
-// Reset alignment
-draw_set_halign(fa_left); draw_set_valign(fa_top);

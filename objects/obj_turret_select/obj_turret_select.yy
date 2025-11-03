@@ -1,21 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_tower_basic",
+  "%Name":"obj_turret_select",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"Create","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"Create","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"Step","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"Step","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"Draw","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"Draw","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_tower_basic",
+  "name":"obj_turret_select",
   "overriddenProperties":[],
   "parent":{
     "name":"Gmome Attack",
     "path":"Gmome Attack.yyp",
   },
-  "parentObjectId":{
-    "name":"obj_gnome_defender",
-    "path":"objects/obj_gnome_defender/obj_gnome_defender.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_gnome_defender",
-    "path":"sprites/spr_gnome_defender/spr_gnome_defender.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

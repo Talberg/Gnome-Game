@@ -26,3 +26,17 @@ subtitle = "Defend the garden from evil gnomes!";
 
 // Debug
 show_debug_message("obj_main_menu created (id=" + string(id) + ")");
+
+// On creation, open the dedicated Loadout room so the Load screen is the first thing the player sees
+var r_load = asset_get_index("Room_Load");
+// Only auto-redirect to the Load screen when this menu was created in the Start room.
+// This prevents instances of the main menu placed inside gameplay rooms from forcing a room change.
+if (r_load != -1) {
+	if (is_undefined(Start) == false && room == Start) {
+		room_goto(r_load);
+	} else {
+		show_debug_message("obj_main_menu created in room " + string(room) + ": not redirecting to Room_Load");
+	}
+} else {
+	show_debug_message("Room_Load not found; staying on main menu");
+}

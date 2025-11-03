@@ -20,12 +20,12 @@ if ((game_over || game_won) && keyboard_check_pressed(ord("R"))) {
 // Save/Load loadout shortcuts
 // Press S to save the current tower pool to loadout_default.json
 if (keyboard_check_pressed(ord("S"))) {
-    var fname = scr_save_loadout("default");
+    var fname = scr_save_loadout();
     show_debug_message("Saved loadout: " + string(fname));
 }
 
 // Press L to load the default loadout
 if (keyboard_check_pressed(ord("L"))) {
-    var ok = scr_load_loadout("default");
+    var ok = scr_load_loadout();
     if (ok) show_debug_message("Loaded default loadout");
 }

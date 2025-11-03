@@ -50,27 +50,7 @@ if (hovering_card >= 0 && mouse_check_button_pressed(mb_left)) {
     }
 }
 
-// Handle Save/Load button clicks (GUI coords)
-var btn_w = 80; var btn_h = 28; var btn_gap = 8;
-var btn_x = room_width - 10 - btn_w;
-var btn_y = panel_y + 12;
-var load_y = btn_y + btn_h + btn_gap;
-
-// Save
-if (mouse_gui_y >= btn_y && mouse_gui_y <= btn_y + btn_h && mouse_gui_x >= btn_x && mouse_gui_x <= btn_x + btn_w) {
-    if (mouse_check_button_pressed(mb_left)) {
-        var fname = scr_save_loadout("default");
-        if (is_string(fname)) show_debug_message("Saved loadout: " + fname);
-    }
-}
-
-// Load
-if (mouse_gui_y >= load_y && mouse_gui_y <= load_y + btn_h && mouse_gui_x >= btn_x && mouse_gui_x <= btn_x + btn_w) {
-    if (mouse_check_button_pressed(mb_left)) {
-        var ok = scr_load_loadout("default");
-        if (ok) show_debug_message("Loaded default loadout");
-    }
-}
+// Save/Load buttons moved to dedicated load screen room; click handling removed from pool
 
 // Handle releasing drag
 if (is_dragging && mouse_check_button_released(mb_left)) {

@@ -24,7 +24,6 @@
     {"id":{"name":"obj_gnome_defender","path":"objects/obj_gnome_defender/obj_gnome_defender.yy",},},
     {"id":{"name":"obj_grid_manager","path":"objects/obj_grid_manager/obj_grid_manager.yy",},},
     {"id":{"name":"obj_projectile","path":"objects/obj_projectile/obj_projectile.yy",},},
-    {"id":{"name":"obj_wave_manager","path":"objects/obj_wave_manager/obj_wave_manager.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"scr_draw_gnome_placeholders","path":"scripts/scr_draw_gnome_placeholders/scr_draw_gnome_placeholders.yy",},},
     {"id":{"name":"spr_evil_gnome","path":"sprites/spr_evil_gnome/spr_evil_gnome.yy",},},

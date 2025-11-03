@@ -34,6 +34,7 @@ A tower defense game where you defend against waves of evil gnomes using brave g
 Built with GameMaker Studio 2
 
 ### Project Structure
+
 ```
 Gmome Attack/
 ├── objects/           # Game objects (towers, enemies, managers)
@@ -56,4 +57,4 @@ Gmome Attack/
 
 ---
 
-*A fun tower defense game about gnomes fighting gnomes!*
+_A fun tower defense game about gnomes fighting gnomes!_

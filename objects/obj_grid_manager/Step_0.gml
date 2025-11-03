@@ -60,7 +60,12 @@ if (instance_exists(obj_tower_pool) && obj_tower_pool.is_dragging && mouse_check
     }
 }
 
-// Right-click to remove tower (only if not dragging from pool)
+// Right-click to remove/recall tower (only if not dragging from pool)
+// Removal behavior:
+// - If a matching tower type exists in the tower pool, increment its quantity (if finite) or do nothing if infinite
+// - Apply the pool cooldown for that tower type to prevent immediate re-summon
+// - Refund a percentage of the tower cost to the player (sell-back)
+// - Destroy the tower instance and free the grid cell
 if (mouse_check_button_pressed(mb_right) && 
     (!instance_exists(obj_tower_pool) || !obj_tower_pool.is_dragging)) {
     var mouse_grid_x = floor((mouse_x - grid_start_x) / cell_size);
@@ -73,8 +78,51 @@ if (mouse_check_button_pressed(mb_right) &&
             // Get the tower instance
             var tower = ds_grid_get(tower_grid, mouse_grid_x, mouse_grid_y);
             if (instance_exists(tower)) {
-                // Return tower to pool (we'll implement this later)
-                // For now, just destroy it
+                // Try to find a tower pool manager instance
+                var pool_inst = noone;
+                if (instance_exists(obj_tower_pool)) {
+                    pool_inst = instance_find(obj_tower_pool, 0);
+                }
+
+                // Sell/recall refund percent (50%)
+                var refund_percent = 0.5;
+                var refund_amount = 0;
+
+                // Determine tower cost from the instance (towers define 'tower_cost' in their Create event)
+                if (variable_instance_exists(tower, "tower_cost")) {
+                    refund_amount = floor(tower.tower_cost * refund_percent);
+                }
+
+                // If we have a pool manager, try to return the tower to the pool
+                if (pool_inst != noone) {
+                    var found_index = -1;
+                    var pool_list = pool_inst.tower_pool;
+                    for (var j = 0; j < ds_list_size(pool_list); j++) {
+                        var td = pool_list[| j];
+                        // Match by object (object index stored in pool entry)
+                        if (td[? "object"] == tower.object_index) {
+                            found_index = j;
+                            break;
+                        }
+                    }
+
+                    if (found_index >= 0) {
+                        var td = pool_list[| found_index];
+                        // If pool uses finite quantities (>=0), increment up to max
+                        if (td[? "quantity"] >= 0) {
+                            td[? "quantity"] = min(td[? "quantity"] + 1, td[? "max_quantity"]);
+                        }
+                        // Apply pool cooldown so the player cannot immediately re-place the same tower type
+                        td[? "cooldown"] = td[? "max_cooldown"];
+                    }
+                }
+
+                // Give player refund (even if no pool entry found)
+                if (refund_amount > 0) {
+                    obj_game_manager.gold += refund_amount;
+                }
+
+                // Destroy the tower instance
                 instance_destroy(tower);
             }
             
@@ -82,7 +130,7 @@ if (mouse_check_button_pressed(mb_right) &&
             ds_grid_set(grid, mouse_grid_x, mouse_grid_y, 0);
             ds_grid_set(tower_grid, mouse_grid_x, mouse_grid_y, noone);
             
-            show_debug_message("Tower removed from grid [" + string(mouse_grid_x) + ", " + string(mouse_grid_y) + "]");
+            show_debug_message("Tower removed from grid [" + string(mouse_grid_x) + ", " + string(mouse_grid_y) + "] (partial refund applied)");
         }
     }
 }

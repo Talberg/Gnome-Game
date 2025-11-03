@@ -60,6 +60,8 @@ if (instance_exists(obj_tower_pool) && obj_tower_pool.is_dragging && mouse_check
     }
 }
 
+// (grid-level click-to-open removed; towers now open their own menu on click)
+
 // Right-click to remove/recall tower (only if not dragging from pool)
 // Removal behavior:
 // - If a matching tower type exists in the tower pool, increment its quantity (if finite) or do nothing if infinite

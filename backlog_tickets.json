@@ -1,0 +1,52 @@
+{
+  "generated_at": "2025-11-03T00:00:00Z",
+  "project": "Gmome Attack",
+  "tickets": [
+    {
+      "id": 9,
+      "title": "Add loadout save/load system",
+      "description": "Save and load custom tower loadouts between games. Persist selected towers, quantities, and unlocked towers to disk or player profile.",
+      "status": "not-started",
+      "priority": "medium",
+      "created": "2025-11-03"
+    },
+    {
+      "id": 10,
+      "title": "Tower unlock progression",
+      "description": "Unlock more tower types as player progresses through waves. Design unlock criteria, UI indicators, and progression persistence.",
+      "status": "not-started",
+      "priority": "medium",
+      "created": "2025-11-03"
+    },
+    {
+      "id": 12,
+      "title": "Menu visibility & debugging backlog",
+      "description": "Improvements to make the tower menu impossible to miss and easier to debug. Subtasks included below.",
+      "status": "not-started",
+      "priority": "high",
+      "created": "2025-11-03",
+      "subtasks": [
+        {
+          "sub_id": 12.1,
+          "title": "Draw a temporary bright/red panel for testing visibility",
+          "status": "not-started"
+        },
+        {
+          "sub_id": 12.2,
+          "title": "Add selection glow or highlight on the clicked tower when menu opens",
+          "status": "not-started"
+        },
+        {
+          "sub_id": 12.3,
+          "title": "Add more verbose tracing (mouse coords, tower coords, menu create/destroy traces)",
+          "status": "not-started"
+        },
+        {
+          "sub_id": 12.4,
+          "title": "Optionally add a 'force front fixed depth' toggle",
+          "status": "not-started"
+        }
+      ]
+    }
+  ]
+}

@@ -16,3 +16,16 @@ if (current_wave >= 10 && !wave_in_progress && instance_number(obj_evil_gnome) =
 if ((game_over || game_won) && keyboard_check_pressed(ord("R"))) {
     room_restart();
 }
+
+// Save/Load loadout shortcuts
+// Press S to save the current tower pool to loadout_default.json
+if (keyboard_check_pressed(ord("S"))) {
+    var fname = scr_save_loadout("default");
+    show_debug_message("Saved loadout: " + string(fname));
+}
+
+// Press L to load the default loadout
+if (keyboard_check_pressed(ord("L"))) {
+    var ok = scr_load_loadout("default");
+    if (ok) show_debug_message("Loaded default loadout");
+}

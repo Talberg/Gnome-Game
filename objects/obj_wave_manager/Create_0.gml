@@ -12,8 +12,8 @@ enemies_to_spawn = 0;
 enemies_spawned = 0;
 
 // Wave difficulty scaling
-base_enemies = 5;
-enemies_per_wave_increase = 3;
+base_enemies = 3;
+enemies_per_wave_increase = 2;
 
 // Countdown between waves
 wave_countdown = 180; // 3 seconds at 60fps

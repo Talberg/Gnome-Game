@@ -66,6 +66,7 @@ if (hover_card >= 0 && mouse_check_button_pressed(mb_left)) {
         }
     }
     
-    // Close menu and unpause
+    // Close menu and unpause game
+    instance_activate_all();
     instance_destroy();
 }

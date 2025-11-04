@@ -1,5 +1,9 @@
 /// @description Level-Up Menu Initialization
 
+// Pause the game
+instance_deactivate_all(true);
+instance_activate_object(obj_level_up_menu);
+
 // Get current level from game manager
 if (instance_exists(obj_game_manager)) {
     level_reached = obj_game_manager.player_level;

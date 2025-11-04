@@ -1,5 +1,11 @@
 /// @description Game Manager Initialization
 
+// Initialize upgrade multipliers to default values
+if (!variable_global_exists("damage_multiplier")) global.damage_multiplier = 1.0;
+if (!variable_global_exists("range_multiplier")) global.range_multiplier = 1.0;
+if (!variable_global_exists("fire_rate_multiplier")) global.fire_rate_multiplier = 1.0;
+if (!variable_global_exists("cooldown_multiplier")) global.cooldown_multiplier = 1.0;
+
 // Player resources
 gold = 300; // Increased starting gold for tower purchases
 lives = 20;

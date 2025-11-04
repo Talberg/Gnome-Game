@@ -1,5 +1,12 @@
 /// @description Load a tower pool loadout from a JSON file and apply it to obj_tower_pool
 // Uses global.current_save_slot if set, otherwise "default"
+
+// Initialize upgrade multipliers to default values if not set
+if (!variable_global_exists("damage_multiplier")) global.damage_multiplier = 1.0;
+if (!variable_global_exists("range_multiplier")) global.range_multiplier = 1.0;
+if (!variable_global_exists("fire_rate_multiplier")) global.fire_rate_multiplier = 1.0;
+if (!variable_global_exists("cooldown_multiplier")) global.cooldown_multiplier = 1.0;
+
 var _name = "default";
 if (variable_global_exists("current_save_slot") && global.current_save_slot != "") {
     _name = global.current_save_slot;

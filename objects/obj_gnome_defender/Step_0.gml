@@ -5,27 +5,30 @@ if (attack_timer > 0) {
     attack_timer--;
 }
 
-// Check if current target is still valid
+// Check if current target is still valid (use upgraded range)
 if (instance_exists(target)) {
     var dist = point_distance(x, y, target.x, target.y);
-    if (dist > attack_range || target.hp <= 0) {
+    var effective_range = attack_range * global.range_multiplier;
+    if (dist > effective_range || target.hp <= 0) {
         target = noone;
     }
 }
 
-// Find a new target if we don't have one
+// Find a new target if we don't have one (use upgraded range)
 if (!instance_exists(target)) {
     target = noone;
     
     // Look for enemies in our lane (same y position approximately)
     var nearest = noone;
-    var nearest_dist = attack_range;
+    var effective_range = attack_range * global.range_multiplier;
+    var nearest_dist = effective_range;
     
     with (obj_evil_gnome) {
         // Check if enemy is roughly in the same lane
         if (abs(y - other.y) < 40) {
             var dist = point_distance(x, y, other.x, other.y);
-            if (dist <= other.attack_range && dist < nearest_dist) {
+            var other_effective_range = other.attack_range * global.range_multiplier;
+            if (dist <= other_effective_range && dist < nearest_dist) {
                 nearest = id;
                 nearest_dist = dist;
             }
@@ -37,12 +40,13 @@ if (!instance_exists(target)) {
 
 // Attack if we have a target and cooldown is ready
 if (instance_exists(target) && attack_timer <= 0) {
-    // Create projectile
+    // Create projectile with upgraded damage
     var proj = instance_create_depth(x, y, depth - 1, obj_projectile);
     proj.target = target;
-    proj.damage = damage;
+    proj.damage = damage * global.damage_multiplier;
     
-    attack_timer = attack_cooldown;
+    // Apply cooldown multiplier (lower is better)
+    attack_timer = attack_cooldown * global.cooldown_multiplier;
 }
 
 // Mouse click to open tower menu (left click on this tower)

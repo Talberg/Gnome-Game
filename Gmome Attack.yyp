@@ -19,6 +19,7 @@
   },
   "name":"Gmome Attack",
   "resources":[
+    {"id":{"name":"obj_damage_number","path":"objects/obj_damage_number/obj_damage_number.yy",},},
     {"id":{"name":"obj_evil_gnome","path":"objects/obj_evil_gnome/obj_evil_gnome.yy",},},
     {"id":{"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy",},},
     {"id":{"name":"obj_gnome_defender","path":"objects/obj_gnome_defender/obj_gnome_defender.yy",},},

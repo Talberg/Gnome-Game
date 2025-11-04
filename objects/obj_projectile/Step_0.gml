@@ -16,6 +16,11 @@ var dist = point_distance(x, y, target.x, target.y);
 if (dist < 10) {
     // Deal damage
     target.hp -= damage;
+    
+    // Show damage number
+    var dmg_num = instance_create_depth(target.x, target.y - 20, -1000, obj_damage_number);
+    dmg_num.damage_text = string(damage);
+    
     instance_destroy();
 }
 

@@ -24,8 +24,8 @@ max_level = 20;
 function calculate_xp_for_level(level) {
     if (level <= 1) return 0;
     if (level > max_level) return 999999;
-    // Formula: 50 * (1.15 ^ (level - 1)) - slower scaling than before
-    return floor(50 * power(1.15, level - 1));
+    // Formula: 50 * (1.12 ^ (level - 1)) - more gradual scaling for better balance
+    return floor(50 * power(1.12, level - 1));
 }
 
 // Award XP and check for level-up

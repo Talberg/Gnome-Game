@@ -17,8 +17,8 @@ if (hp <= 0) {
     // Give player gold and XP
     if (instance_exists(obj_game_manager)) {
         obj_game_manager.gold += gold_value;
-        // Award XP: 10 base XP + 5 per wave (scales with difficulty)
-        var xp_award = 10 + (obj_game_manager.current_wave * 5);
+        // Award XP: 8 base XP + 3 per wave (reduced for better balance)
+        var xp_award = 8 + (obj_game_manager.current_wave * 3);
         obj_game_manager.gain_xp(xp_award);
     }
     instance_destroy();

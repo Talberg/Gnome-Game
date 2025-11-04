@@ -15,17 +15,17 @@ game_won = false;
 // Level & XP system
 player_level = 1;
 player_xp = 0;
-xp_to_next_level = 100; // XP needed for level 2
+xp_to_next_level = 50; // XP needed for level 2 (reduced from 100)
 
-// XP curve: exponential scaling (each level needs 20% more XP than the last)
+// XP curve: moderate scaling - level up every 1-2 waves early game
 max_level = 20;
 
 // Calculate XP needed for a given level
 function calculate_xp_for_level(level) {
     if (level <= 1) return 0;
     if (level > max_level) return 999999;
-    // Formula: 100 * (1.2 ^ (level - 1))
-    return floor(100 * power(1.2, level - 1));
+    // Formula: 50 * (1.15 ^ (level - 1)) - slower scaling than before
+    return floor(50 * power(1.15, level - 1));
 }
 
 // Award XP and check for level-up

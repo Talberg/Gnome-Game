@@ -4,6 +4,16 @@
 instance_deactivate_all(true);
 instance_activate_object(obj_level_up_menu);
 
+// Flash effect animation
+flash_alpha = 1.0;
+flash_timer = 0;
+flash_duration = 30; // frames
+
+// Expanding rings effect
+ring_radius = 0;
+ring_max_radius = 800;
+ring_speed = 30;
+
 // Get current level from game manager
 if (instance_exists(obj_game_manager)) {
     level_reached = obj_game_manager.player_level;

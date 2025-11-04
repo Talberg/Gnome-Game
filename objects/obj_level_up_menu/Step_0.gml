@@ -1,5 +1,16 @@
 /// @description Handle reward card selection
 
+// Update flash animation
+if (flash_timer < flash_duration) {
+    flash_timer++;
+    flash_alpha = 1.0 - (flash_timer / flash_duration);
+}
+
+// Update expanding rings
+if (ring_radius < ring_max_radius) {
+    ring_radius += ring_speed;
+}
+
 var mx = mouse_x;
 var my = mouse_y;
 

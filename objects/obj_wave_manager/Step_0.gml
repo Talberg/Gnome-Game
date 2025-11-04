@@ -29,8 +29,8 @@ if (wave_active) {
         // Update game manager and award wave completion bonus XP
         if (instance_exists(obj_game_manager)) {
             obj_game_manager.wave_in_progress = false;
-            // Wave completion bonus: 50 XP + 25 per wave number
-            var wave_bonus_xp = 50 + (wave_number * 25);
+            // Wave completion bonus: 30 XP + 15 per wave number (reduced for better pacing)
+            var wave_bonus_xp = 30 + (wave_number * 15);
             obj_game_manager.gain_xp(wave_bonus_xp);
             show_debug_message("Wave " + string(wave_number) + " complete! Bonus XP: " + string(wave_bonus_xp));
         }

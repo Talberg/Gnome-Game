@@ -1,5 +1,32 @@
 /// @description Draw level-up menu
 
+// Flash effect (bright gold flash that fades out)
+if (flash_alpha > 0) {
+    draw_set_alpha(flash_alpha * 0.6);
+    draw_set_color(c_yellow);
+    draw_rectangle(0, 0, room_width, room_height, false);
+    draw_set_alpha(1);
+}
+
+// Expanding rings effect (draw multiple rings from center)
+if (ring_radius < ring_max_radius) {
+    var cx = room_width / 2;
+    var cy = room_height / 2;
+    
+    // Draw 3 rings at different stages
+    for (var i = 0; i < 3; i++) {
+        var r = ring_radius - (i * 150);
+        if (r > 0 && r < ring_max_radius) {
+            var ring_alpha = 1 - (r / ring_max_radius);
+            draw_set_alpha(ring_alpha * 0.4);
+            draw_set_color(c_lime);
+            draw_circle(cx, cy, r, true);
+            draw_circle(cx, cy, r + 2, true);
+        }
+    }
+    draw_set_alpha(1);
+}
+
 // Dim the game background
 draw_set_alpha(0.7);
 draw_set_color(c_black);

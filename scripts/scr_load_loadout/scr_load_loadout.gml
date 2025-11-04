@@ -93,5 +93,27 @@ if (!is_undefined(data.turret_selection)) {
     show_debug_message("[load_loadout] Restored turret selection: " + string(array_length(data.turret_selection)) + " turrets");
 }
 
+// Restore player level and XP if saved
+if (instance_exists(obj_game_manager)) {
+    var gm = obj_game_manager;
+    if (!is_undefined(data.meta)) {
+        if (!is_undefined(data.meta.player_level)) {
+            gm.player_level = data.meta.player_level;
+            gm.player_xp = !is_undefined(data.meta.player_xp) ? data.meta.player_xp : 0;
+            gm.xp_to_next_level = gm.calculate_xp_for_level(gm.player_level + 1) - gm.calculate_xp_for_level(gm.player_level);
+            show_debug_message("[load_loadout] Restored level " + string(gm.player_level) + " with " + string(gm.player_xp) + " XP");
+        }
+    }
+}
+
+// Restore upgrade multipliers if saved
+if (!is_undefined(data.upgrades)) {
+    if (!is_undefined(data.upgrades.damage_mult)) global.damage_multiplier = data.upgrades.damage_mult;
+    if (!is_undefined(data.upgrades.range_mult)) global.range_multiplier = data.upgrades.range_mult;
+    if (!is_undefined(data.upgrades.fire_rate_mult)) global.fire_rate_multiplier = data.upgrades.fire_rate_mult;
+    if (!is_undefined(data.upgrades.cooldown_mult)) global.cooldown_multiplier = data.upgrades.cooldown_mult;
+    show_debug_message("[load_loadout] Restored upgrade multipliers");
+}
+
 show_debug_message("[load_loadout] Loaded loadout from " + filename + " (" + string(len) + " items)");
 return true;

@@ -18,9 +18,40 @@ draw_text(200, 10, "Lives: " + string(lives));
 draw_set_color(c_white);
 draw_text(380, 10, "Wave: " + string(current_wave));
 
-// Draw hint
-draw_set_color(c_ltgray);
-draw_text(560, 10, "[R] Toggle Ranges");
+// Draw level
+draw_set_color(c_aqua);
+draw_text(520, 10, "Level: " + string(player_level));
+
+// Draw XP bar
+var xp_bar_x = 660;
+var xp_bar_y = 12;
+var xp_bar_w = 200;
+var xp_bar_h = 16;
+var xp_progress = (xp_to_next_level > 0) ? (player_xp / xp_to_next_level) : 1;
+
+// XP bar background
+draw_set_color(c_dkgray);
+draw_rectangle(xp_bar_x, xp_bar_y, xp_bar_x + xp_bar_w, xp_bar_y + xp_bar_h, false);
+
+// XP bar fill
+draw_set_color(c_lime);
+draw_rectangle(xp_bar_x, xp_bar_y, xp_bar_x + (xp_bar_w * xp_progress), xp_bar_y + xp_bar_h, false);
+
+// XP bar border
+draw_set_color(c_white);
+draw_rectangle(xp_bar_x, xp_bar_y, xp_bar_x + xp_bar_w, xp_bar_y + xp_bar_h, true);
+
+// XP text
+draw_set_color(c_white);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+if (player_level < max_level) {
+    draw_text(xp_bar_x + xp_bar_w/2, xp_bar_y + xp_bar_h/2, string(player_xp) + "/" + string(xp_to_next_level));
+} else {
+    draw_text(xp_bar_x + xp_bar_w/2, xp_bar_y + xp_bar_h/2, "MAX LEVEL");
+}
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
 
 // Game over message
 if (game_over) {

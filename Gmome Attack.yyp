@@ -23,6 +23,7 @@
     {"id":{"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy",},},
     {"id":{"name":"obj_gnome_defender","path":"objects/obj_gnome_defender/obj_gnome_defender.yy",},},
     {"id":{"name":"obj_grid_manager","path":"objects/obj_grid_manager/obj_grid_manager.yy",},},
+    {"id":{"name":"obj_level_up_menu","path":"objects/obj_level_up_menu/obj_level_up_menu.yy",},},
     {"id":{"name":"obj_main_menu","path":"objects/obj_main_menu/obj_main_menu.yy",},},
     {"id":{"name":"obj_projectile","path":"objects/obj_projectile/obj_projectile.yy",},},
     {"id":{"name":"obj_tower_basic","path":"objects/obj_tower_basic/obj_tower_basic.yy",},},

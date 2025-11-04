@@ -41,6 +41,8 @@ for (var i = 0; i < count; i++) {
 var meta = {};
 meta.generated = date_datetime_string(date_current_datetime());
 meta.gold = obj_game_manager.gold;
+meta.player_level = obj_game_manager.player_level;
+meta.player_xp = obj_game_manager.player_xp;
 
 // Save turret selection if it exists
 var turret_sel = [];
@@ -48,10 +50,18 @@ if (variable_global_exists("turret_selection") && is_array(global.turret_selecti
     turret_sel = global.turret_selection;
 }
 
+// Save global upgrade multipliers
+var upgrades = {};
+upgrades.damage_mult = variable_global_exists("damage_multiplier") ? global.damage_multiplier : 1.0;
+upgrades.range_mult = variable_global_exists("range_multiplier") ? global.range_multiplier : 1.0;
+upgrades.fire_rate_mult = variable_global_exists("fire_rate_multiplier") ? global.fire_rate_multiplier : 1.0;
+upgrades.cooldown_mult = variable_global_exists("cooldown_multiplier") ? global.cooldown_multiplier : 1.0;
+
 var save_struct = {};
 save_struct.meta = meta;
 save_struct.pool = out;
 save_struct.turret_selection = turret_sel;
+save_struct.upgrades = upgrades;
 
 var json_text = json_encode(save_struct);
 

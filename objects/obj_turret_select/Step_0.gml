@@ -23,13 +23,14 @@ for (var i = 0; i < cols; i++) {
 
 // Toggle selection on click
 if (hover_index >= 0 && mouse_check_button_pressed(mb_left)) {
-    // count currently selected
-    var sel_count = 0;
-    for (var j = 0; j < array_length(selected); j++) if (selected[j]) sel_count += 1;
+    // Enforce single-selection: deselect others and select this one. If already selected, deselect it.
     if (!selected[hover_index]) {
-        if (sel_count < max_select) selected[hover_index] = true;
-        else show_debug_message("Maximum " + string(max_select) + " turrets selected.");
+        // deselect all first
+        for (var d = 0; d < array_length(selected); d++) selected[d] = false;
+        // select the clicked card
+        selected[hover_index] = true;
     } else {
+        // clicking the already selected card will deselect it
         selected[hover_index] = false;
     }
 }

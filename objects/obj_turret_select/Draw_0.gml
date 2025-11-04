@@ -37,6 +37,13 @@ for (var i = 0; i < cols; i++) {
     draw_set_color(c_white);
     // small description placeholder
     draw_text(cx + 8, cy + 44, "A useful gnome turret.");
+    // Selected badge
+    if (is_sel) {
+        draw_set_color(c_black);
+        draw_rectangle(cx + card_w - 84, cy + 8, cx + card_w - 8, cy + 32, false);
+        draw_set_color(c_white);
+        draw_text(cx + card_w - 46, cy + 20, "SELECTED");
+    }
 }
 
 // Draw Start button

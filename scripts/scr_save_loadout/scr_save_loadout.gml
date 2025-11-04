@@ -1,7 +1,9 @@
 /// @description Save the current tower pool to a JSON loadout file
-/// @arg _name string - loadout name (used as filename)
-var _name = argument0;
-if (_name == undefined || _name == "") _name = "default";
+// Uses global.current_save_slot if set, otherwise "default"
+var _name = "default";
+if (variable_global_exists("current_save_slot") && global.current_save_slot != "") {
+    _name = global.current_save_slot;
+}
 
 if (!instance_exists(obj_tower_pool)) {
     show_debug_message("[save_loadout] No tower pool (obj_tower_pool) found. Save aborted.");
@@ -37,18 +39,38 @@ for (var i = 0; i < count; i++) {
 
 // Also save some global/game state that may be useful
 var meta = {};
-meta.generated = date_format(date_current_datetime(), "%Y-%m-%dT%H:%M:%SZ");
+meta.generated = date_datetime_string(date_current_datetime());
 meta.gold = obj_game_manager.gold;
+
+// Save turret selection if it exists
+var turret_sel = [];
+if (variable_global_exists("turret_selection") && is_array(global.turret_selection)) {
+    turret_sel = global.turret_selection;
+}
 
 var save_struct = {};
 save_struct.meta = meta;
 save_struct.pool = out;
+save_struct.turret_selection = turret_sel;
 
 var json_text = json_encode(save_struct);
-var filename = "loadout_" + _name + ".json";
 
-// Write to working directory
-var fh = file_text_open_write(filename);
+// Ensure saves directory exists and write into it
+var save_dir = "saves";
+if (!directory_exists(save_dir)) {
+    var ok = directory_create(save_dir);
+    if (!ok) show_debug_message("[save_loadout] Warning: could not create saves directory '" + save_dir + "'");
+}
+var filename = save_dir + "/loadout_" + _name + ".json";
+
+// Write JSON to file
+var fh = -1;
+try {
+    fh = file_text_open_write(filename);
+} catch (e) {
+    show_debug_message("[save_loadout] Error opening file for write: " + filename);
+    return undefined;
+}
 file_text_write_string(fh, json_text);
 file_text_close(fh);
 

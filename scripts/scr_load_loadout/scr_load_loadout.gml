@@ -1,12 +1,29 @@
 /// @description Load a tower pool loadout from a JSON file and apply it to obj_tower_pool
-/// @arg _name string - loadout name (filename without prefix)
-var _name = argument0;
-if (_name == undefined || _name == "") _name = "default";
+// Uses global.current_save_slot if set, otherwise "default"
+var _name = "default";
+if (variable_global_exists("current_save_slot") && global.current_save_slot != "") {
+    _name = global.current_save_slot;
+}
 
-var filename = "loadout_" + _name + ".json";
+var save_dir = "saves";
+var filename = save_dir + "/loadout_" + _name + ".json";
 if (!file_exists(filename)) {
-    show_debug_message("[load_loadout] File not found: " + filename);
-    return false;
+    show_debug_message("[load_loadout] File not found: " + filename + " - creating default save");
+    // Create a default save with basic gnome selected
+    global.turret_selection = ["obj_tower_basic"];
+    // Trigger a save to create the file (but we need obj_tower_pool to exist first)
+    if (instance_exists(obj_tower_pool)) {
+        scr_save_loadout();
+        show_debug_message("[load_loadout] Created default save, reloading...");
+        // Now try loading again
+        if (!file_exists(filename)) {
+            show_debug_message("[load_loadout] Failed to create default save");
+            return false;
+        }
+    } else {
+        show_debug_message("[load_loadout] Cannot create default save - no tower pool exists yet");
+        return false;
+    }
 }
 
 var fh = file_text_open_read(filename);
@@ -69,6 +86,12 @@ for (var i = 0; i < len; i++) {
     ds_list_add(new_list, m);
 }
 pool.tower_pool = new_list;
+
+// Restore turret selection if it was saved
+if (!is_undefined(data.turret_selection)) {
+    global.turret_selection = data.turret_selection;
+    show_debug_message("[load_loadout] Restored turret selection: " + string(array_length(data.turret_selection)) + " turrets");
+}
 
 show_debug_message("[load_loadout] Loaded loadout from " + filename + " (" + string(len) + " items)");
 return true;
